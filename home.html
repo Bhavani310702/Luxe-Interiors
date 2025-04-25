@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE INTERIORS</title>
+    <link rel="stylesheet" href="./styles/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"/> -->
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div id="container" class="container-fluid">
+          <section class="nav_logo">
+            <a class="navbar-brand" href="#"><img class="logo_img" src="./assests/images/logo.png"></a>
+          </section>
+          <section class="nav_search">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+              </form>
+          </section>
+          <section class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</section>
+          <section class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</section>
+          <section class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</section>
+          <section class="nav_items">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3103 1.77586C11.6966 1.40805 12.3034 1.40805 12.6897 1.77586L20.6897 9.39491L23.1897 11.7759C23.5896 12.1567 23.605 12.7897 23.2241 13.1897C22.8433 13.5896 22.2103 13.605 21.8103 13.2241L21 12.4524V20C21 21.1046 20.1046 22 19 22H14H10H5C3.89543 22 3 21.1046 3 20V12.4524L2.18966 13.2241C1.78972 13.605 1.15675 13.5896 0.775862 13.1897C0.394976 12.7897 0.410414 12.1567 0.810345 11.7759L3.31034 9.39491L11.3103 1.77586ZM5 10.5476V20H9V15C9 13.3431 10.3431 12 12 12C13.6569 12 15 13.3431 15 15V20H19V10.5476L12 3.88095L5 10.5476ZM13 20V15C13 14.4477 12.5523 14 12 14C11.4477 14 11 14.4477 11 15V20H13Z" fill="#000000"></path> </g></svg></a>
+                  </li>
+                  <li class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M30.051 45.6071L17.851 54.7401C17.2728 55.1729 16.5856 55.4363 15.8662 55.5008C15.1468 55.5652 14.4237 55.4282 13.7778 55.1049C13.1319 54.7817 12.5887 54.2851 12.209 53.6707C11.8293 53.0563 11.6281 52.3483 11.628 51.626V15.306C11.628 13.2423 12.4477 11.2631 13.9069 9.8037C15.3661 8.34432 17.3452 7.52431 19.409 7.52405H45.35C47.4137 7.52431 49.3929 8.34432 50.8521 9.8037C52.3112 11.2631 53.131 13.2423 53.131 15.306V51.625C53.1309 52.3473 52.9297 53.0553 52.55 53.6697C52.1703 54.2841 51.6271 54.7807 50.9812 55.1039C50.3353 55.4272 49.6122 55.5642 48.8928 55.4998C48.1734 55.4353 47.4862 55.1719 46.908 54.739L34.715 45.6071C34.0419 45.1031 33.2238 44.8308 32.383 44.8308C31.5422 44.8308 30.724 45.1031 30.051 45.6071V45.6071Z" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
+                  </li>
+                  <li class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 5L19 12H7.37671M20 16H8L6 3H3M11.5 7L13.5 9M13.5 9L15.5 7M13.5 9V3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></a>
+                  </li>
+                  <li class="spaces">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM3 12C3 11.4477 3.44772 11 4 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H4C3.44772 13 3 12.5523 3 12ZM3 18C3 17.4477 3.44772 17 4 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H4C3.44772 19 3 18.5523 3 18Z" fill="#000000"></path> </g></svg>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">profile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">orders</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">signin /signout</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            
+              </div>
+          </section>
+          <section class="nav_toggle">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button id="button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          </section>
+        </div>
+      </nav>
+      <!-- -------------------------navbar completed----------------------------------->
+    
+    <section class="section-1">
+        <div class="section-1-carousel">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assests/images/home/section-1/img3.jpg" class="d-block  w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assests/images/home/section-1/img3.jpg" class="d-block  w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assests/images/home/section-1/img3.jpg" class="d-block  w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        <div class="section-1-content">
+          <h2>Make space for ur dreams</h2><br>
+          <h3>Set up your new home in a budget</h3>
+          <p><a href="">Sofas |</a> <a href="">Beds |</a> <a href="">Dining |</a> <a href="">Tv units |</a><a href="">Mattresses | </a><a href="">Seating |</a> <a href="">Coffee tables |</a> <a href="">Wardrobes |</a> <a href="">Storage |</a> <a href="">Bookshelves |</a> <a href="">Shoe racks |</a> <a href="">Decor|</a> <a href="">Bathroom |</a> <a href="">Textiles |</a> <a href="">Pots & plants |</a> <a href="">Home electronics |</a> <a href="">Home improvement |</a> <a href="">Lighting</a></p>
+          <p id="p1">Join&nbsp;&nbsp;<a href="#" id="a2">LUXE INTERIORS...!</a></p>
+        </div>
+    </section>
+<!-- ----------------------------------section1 completed--------------------------- -->
+
+<section class="section-2">
+    <div class="box-container">
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="100">
+          <a href=""><img src="./assests/images/home/section-2/img1.avif" alt=""></a>          
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href=""><img src="./assests/images/home/section-2/img5.avif" alt=""></a>           
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <a href=""><img src="./assests/images/home/section-2/img2.avif" alt=""></a>        
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="400">
+            <a href=""><img src="./assests/images/home/section-2/img6.avif" alt=""></a>          
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="500">
+            <a href=""><img src="./assests/images/home/section-2/img3.avif" alt=""></a>           
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
+           <a href=""><img src="./assests/images/home/section-2/img7.avif" alt=""></a>           
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="700">
+            <a href=""><img src="./assests/images/home/section-2/img4.jpg" alt=""></a>           
+        </div>
+          <div class="box" data-aos="zoom-in-up" data-aos-delay="800">
+            <a href=""><img src="./assests/images/home/section-2/img8.webp" alt=""></a>
+        </div>          
+    </div>
+</section>
+
+<!-- ----------------------------section-2 completed------------------------------------------>
+
+<h2 class="headings">Explore more home solutions</h2>
+
+<section class="section-3">
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img1.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img2.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img3.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img4.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img5.jpg" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img6.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>  
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img7.webp" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>
+  </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img8.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>
+    </div>
+  <div class="section-3-content">
+    <img src="./assests/images/home/section-3/img9.avif" alt="">
+    <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ebebeb" stroke="#ebebeb"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 1024C229.7 1024 0 794.3 0 512S229.7 0 512 0s512 229.7 512 512-229.7 512-512 512z m0-938.7C276.7 85.3 85.3 276.7 85.3 512S276.7 938.7 512 938.7 938.7 747.3 938.7 512 747.3 85.3 512 85.3z" fill="#b78f543688FF"></path><path d="M469.3 704c-10.9 0-21.8-4.2-30.2-12.5-16.7-16.7-16.7-43.7 0-60.3L558.3 512 439.2 392.8c-16.7-16.7-16.7-43.7 0-60.3 16.7-16.7 43.7-16.7 60.3 0l149.3 149.3c16.7 16.7 16.7 43.7 0 60.3L499.5 691.5c-8.3 8.3-19.3 12.5-30.2 12.5z" fill="#b78f54"></path></g></svg>
+  </div>
+</section>
+<!-- -----------------------------------section-3 completed---------------------------------- -->
+ 
+<h2 class="headings">what's new at Luxe Interiors</h2>
+
+<section class="section-4">
+  <section class="sec4_container">
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators1" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img1.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img1.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img1.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+     <!-- carousel completed -->
+       <div class="sec4_content">
+          <h4><a href="">KNAPPER</a></h4>
+          <h5>Standing mirror</h5> 
+          <p>RS.<span>3,990</span></p>
+          <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+          <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+      </div> 
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators2" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img2.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img2.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img2.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">VISKABACKA</a></h4>
+        <h5>Armchair</h5> 
+        <p>RS.<span>14,990</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators3" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img3.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img3.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img3.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">SLÖJSILJA</a></h4>
+        <h5>Duvet cover and 2 pillowcases,</h5> 
+        <p>RS.<span>2,490</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators4" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img4.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img4.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img4.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators4" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">EKEDALEN / EKEDALEN</a></h4>
+        <h5>Table and 4 chairs, 120/180 cm</h5> 
+        <p>RS.<span>46,790</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators5" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img5.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img5.2.webp" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img5.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators5" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">BILLY</a></h4>
+        <h5>Bookcase, 80x58x106 cm </h5> 
+        <p>RS.<span>4,990</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators6" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img6.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img6.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img6.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators6" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">TERTIAL</a></h4>
+        <h5>Work Lamp</h5> 
+        <p>RS.<span>1,290</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators7" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img7.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img7.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img7.3.avif" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators7" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">BERGLÄRKA</a></h4>
+        <h5>Study Desk, 120x70 cm</h5> 
+        <p>RS.<span>12,990</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+    <div class="sec4_container_box" id="box1">
+      <div id="carouselExampleIndicators8" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators8" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators8" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators8" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assests/images/home/section-4/img8.1.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img8.2.avif" class="d-block" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assests/images/home/section-4/img8.3.webp" class="d-block" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators8" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators8" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- carousel completed -->
+      <div class="sec4_content">
+        <h4><a href="">LAMPAN</a></h4>
+        <h5>Table Lamp</h5> 
+        <p>RS.<span>990</span></p>
+        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194px" height="194px" viewBox="0 0 32 32" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.64"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .open_een{fill:#000000;} </style> <g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> <g> <path class="open_een" d="M16,30c-0.46,0-0.888-0.206-1.174-0.566L4.794,16.301c-0.168-0.22-0.126-0.533,0.094-0.701 c0.219-0.166,0.532-0.125,0.701,0.094l10.026,13.125c0.178,0.225,0.586,0.232,0.775-0.007 c0.108-0.142,11.401-14.926,11.581-15.169c0.95-1.537,1.26-3.41,0.849-5.242c-0.592-2.643-2.778-4.76-5.44-5.268 c-2.538-0.486-5.035,0.934-6.526,2.423c-0.601,0.597-1.536,0.597-2.133,0c-0.983-0.981-1.992-1.686-2.997-2.093 c-1.025-0.416-2.068-0.526-3.104-0.33C5.958,3.641,3.771,5.758,3.18,8.4c-0.411,1.832-0.102,3.705,0.869,5.273 c0.146,0.235,0.073,0.543-0.161,0.688c-0.234,0.145-0.543,0.073-0.688-0.162c-1.11-1.792-1.464-3.929-0.996-6.018 c0.679-3.026,3.182-5.45,6.229-6.032c1.225-0.233,2.459-0.104,3.666,0.385c1.13,0.457,2.249,1.235,3.329,2.312 c0.205,0.204,0.514,0.206,0.719,0c1.674-1.67,4.505-3.254,7.421-2.697c3.048,0.582,5.551,3.006,6.229,6.032 c0.468,2.089,0.114,4.226-0.996,6.018c-0.018,0.029-0.039,0.063-11.621,15.227C16.888,29.794,16.46,30,16,30z"></path> </g> </g> </g></svg>
+        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19,14a1,1,0,0,0,.949-.684l2-6A1,1,0,0,0,21,6H7V2A1,1,0,0,0,6,1H3A1,1,0,0,0,3,3H5V17a1,1,0,0,0,1,1H18a1,1,0,0,0,0-2H7V14ZM7,8H19.613l-1.334,4H7ZM6.5,19A1.5,1.5,0,1,1,5,20.5,1.5,1.5,0,0,1,6.5,19Zm10,0A1.5,1.5,0,1,1,15,20.5,1.5,1.5,0,0,1,16.5,19Z"></path></g></svg>
+    </div>
+    </div>
+  </section>
+</section>
+
+</body>
+</html>
