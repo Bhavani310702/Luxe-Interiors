@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.split-container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-section {
+    width: 40%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(183, 143, 84, 0.1);
+    z-index: 10;
+}
+
+.image-section {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+/* Centering with space at top and bottom */
+.carousel-container {
+    width: 90%;
+    height: 80%; /* Reduced height */
+    margin: auto; /* Center the carousel */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-item {
+    height: 100%; /* Full height of container */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(183, 143, 84, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #b78f54;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh; /* Reduced height */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    background-color: white;
+}
+
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #b78f54;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(183, 143, 84, 0.2);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkbox-group input {
+    margin-right: 8px;
+}
+
+.checkbox-group input:checked {
+    accent-color: #b78f54;
+}
+
+.forgot-link {
+    color: #b78f54;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #b78f54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #a37c45;
+    transform: translateY(-2px);
+}
+
+.btn-guest {
+    background-color: transparent;
+    color: #b78f54;
+    border: 1px solid #b78f54;
+    margin-top: 10px;
+}
+
+.btn-guest:hover {
+    background-color: rgba(183, 143, 84, 0.1);
+    color: #a37c45;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #b78f54;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #a37c45;
+}
+
+.carousel-inner {
+    height: 100%;
+    width: 100%;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    color: #b78f54;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #b78f54;
+}
+
+.divider::before {
+    margin-right: .5em;
+}
+
+.divider::after {
+    margin-left: .5em;
+}
+
+/* Improve carousel indicators */
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: rgba(183, 143, 84, 0.6);
+}
+
+.carousel-indicators .active {
+    background-color: #b78f54;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(0%) sepia(32%) saturate(790%) hue-rotate(356deg) brightness(99%) contrast(90%);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) and (min-width: 426px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .split-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .login-section {
+        width: 100%;
+        order: 2;
+        height: auto;
+        padding: 40px 20px;
+    }
+    
+    .image-section {
+        width: 100%;
+        order: 1;
+        height: 40vh;
+        padding: 30px 0;
+    }
+    
+    .carousel-container {
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    
+    .form-container {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        max-height: none;
+    }
+    
+    /* Add space between sections */
+    .split-container::before {
+        content: '';
+        display: block;
+        height: 20px;
+        width: 100%;
+        order: 1.5; /* Between image and login sections */
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .split-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .login-section {
+        width: 100%;
+        order: 2;
+        height: auto;
+        padding: 20px 15px 40px;
+    }
+    
+    .image-section {
+        width: 100%;
+        order: 1;
+        height: 30vh;
+        padding: 20px 0;
+    }
+    
+    .carousel-container {
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .form-header h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .form-container {
+        margin-top: 10px;
+        max-height: none;
+    }
+    
+    /* Add space between sections */
+    .split-container::before {
+        content: '';
+        display: block;
+        height: 15px;
+        width: 100%;
+        order: 1.5; /* Between image and login sections */
+    }
+}

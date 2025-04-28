@@ -5,228 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxe-Interiors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <script src="./index.js" defer type="module" ></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: white;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        .split-container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .register-section {
-            width: 40%;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            overflow-y: auto;
-        }
-
-        .image-section {
-            width: 60%;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: white;
-        }
-
-        .carousel-container {
-            width: 100%;
-            height: 70%;
-        }
-
-        .carousel-item {
-            height: 60vh;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #3f51b5;
-            margin-bottom: 30px;
-        }
-
-        .form-container {
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .form-header {
-            margin-bottom: 25px;
-        }
-
-        .form-header h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .form-header p {
-            color: #666;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: #3f51b5;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-group input {
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #3f51b5;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #303f9f;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        .login-link a {
-            color: #3f51b5;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
-        .carousel-inner {
-            height: 100%;
-            width: 100%;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) and (min-width: 426px) {
-            .split-container {
-                flex-direction: column;
-            }
-            
-            .register-section {
-                width: 100%;
-                order: 2;
-                height: 55%;
-                padding: 30px 20px;
-            }
-            
-            .image-section {
-                width: 100%;
-                order: 1;
-                height: 45%;
-            }
-            
-            .carousel-item {
-                height: 35vh;
-            }
-        }
-
-        @media (max-width: 425px) {
-            .split-container {
-                flex-direction: column;
-            }
-            
-            .register-section {
-                width: 100%;
-                order: 2;
-                height: 70%;
-                padding: 20px 15px;
-            }
-            
-            .image-section {
-                width: 100%;
-                order: 1;
-                height: 30%;
-            }
-            
-            .carousel-item {
-                height: 25vh;
-            }
-            
-            .logo {
-                font-size: 28px;
-                margin-bottom: 20px;
-            }
-            
-            .form-header h2 {
-                font-size: 24px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/register.css">
+    <script src="./index.js" defer type="module"></script>
 </head>
 <body>
     <div class="split-container">
-        <!-- Left Side - Registration Form (40%) -->
+        <!-- Left Side - Image Carousel (60%) -->
+        <div class="image-section">
+            <div id="productCarousel" class="carousel slide carousel-container" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./assests/login&signup/img1.jpg" alt="Featured Product 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Latest Collections</h5>
+                            <p>Browse our newest arrivals</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assests/login&signup/img2.jpg" alt="Featured Product 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Member Benefits</h5>
+                            <p>Join today for exclusive perks</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assests/login&signup/img3.jpg" alt="Featured Product 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Shop Confidently</h5>
+                            <p>Secure payments and easy returns</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Right Side - Registration Form (40%) -->
         <div class="register-section">
             <div class="logo">Luxe-Interiors</div>
             <div id="signup" class="form-container">
@@ -260,48 +86,6 @@
                 <div class="login-link">
                     <p>Already have an account? <a href="index.html">Login here</a></p>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Right Side - Image Carousel (60%) -->
-        <div class="image-section">
-            <div id="productCarousel" class="carousel slide carousel-container" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./assests/login&signup/img1.webp" alt="Featured Product 1">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Latest Collections</h5>
-                            <p>Browse our newest arrivals</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assests/login&signup/img2.webp"alt="Featured Product 2">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Member Benefits</h5>
-                            <p>Join today for exclusive perks</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assests/login&signup/img3.jpg" alt="Featured Product 3">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Shop Confidently</h5>
-                            <p>Secure payments and easy returns</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
