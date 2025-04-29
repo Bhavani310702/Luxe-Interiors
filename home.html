@@ -6,7 +6,9 @@
     <title>Luxe-Interiors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/products-grid.css">
     <script src="./index.js" defer type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -85,7 +87,95 @@
         </div>
     </nav>
 
+    <!-- Hero Section with 60:40 Split -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <!-- Left side image (60%) -->
+                <div class="col-lg-7 col-md-6 hero-image-container">
+                    <img src="./assests/images/home/section-1/image1.jpg" alt="Luxury Interior" class="hero-image">
+                </div>
+                
+                <!-- Right side content (40%) -->
+                <div class="col-lg-5 col-md-6 hero-content-container">
+                    <div class="hero-content">
+                        <h1>Welcome to Luxe-Interiors</h1>
+                        <p class="hero-text">Transform your living space with our curated collection of premium furniture and decor. Discover unique pieces that blend elegance and comfort for the perfect interior.</p>
+                        <p class="hero-subtext">From contemporary designs to timeless classics, our collection caters to diverse aesthetics.</p>
+                        <button class="btn explore-btn">Explore Collection</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Grid Section -->
+    <section class="luxe-products-section">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <div class="luxe-products-grid">
+                <div class="luxe-box luxe-promo" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="luxe-promo-content">
+                        <h2>Elevate Your Space</h2>
+                        <a href="#" class="luxe-btn promo-btn">Discover More</a>
+                    </div>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="200">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Luxury Beds" class="grid-image">
+                        <span class="category-label">Beds</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="300">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/1778353/pexels-photo-1778353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Designer Sofas" class="grid-image">
+                        <span class="category-label">Sofas</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="400">
+                    <a href="#">
+                        <img src="https://media.istockphoto.com/id/173589999/photo/bed-turned-down-in-hotel-room.jpg?b=1&s=612x612&w=0&k=20&c=DaZfe6c6gNEIp2cAztRieNApbe8kZpIH5gV_Wi52o40=" alt="Premium Lighting" class="grid-image">
+                        <span class="category-label">Lighting</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="500">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/17142755/pexels-photo-17142755/free-photo-of-round-table-in-dining-room.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dining Room" class="grid-image">
+                        <span class="category-label">Dining Table</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="600">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/8134812/pexels-photo-8134812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Luxury Storage" class="grid-image">
+                        <span class="category-label">Storage</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="700">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Home Decor" class="grid-image">
+                        <span class="category-label">Decor</span>
+                    </a>
+                </div>
+                
+                <div class="luxe-box" data-aos="zoom-in-up" data-aos-delay="800">
+                    <a href="#">
+                        <img src="https://images.pexels.com/photos/2972890/pexels-photo-2972890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Outdoor Furniture" class="grid-image">
+                        <span class="category-label">Outdoor</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="./scripts/home.js"></script>
+    <script src="./scripts/products-grid.js"></script>
 </body>
 </html>
