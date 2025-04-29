@@ -16,7 +16,6 @@ body {
     height: 100vh;
 }
 
-/* Right side - Registration Form (40%) */
 .register-section {
     width: 40%;
     background-color: white;
@@ -28,10 +27,8 @@ body {
     height: 100%;
     box-shadow: 0 0 20px rgba(183, 143, 84, 0.1);
     z-index: 10;
-    order: 2; /* Move to the right */
 }
 
-/* Left side - Image Carousel (60%) */
 .image-section {
     width: 60%;
     height: 100%;
@@ -41,7 +38,6 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: white;
-    order: 1; /* Move to the left */
 }
 
 /* Centering with space at top and bottom */
@@ -300,6 +296,6 @@ body {
         display: block;
         height: 15px;
         width: 100%;
-        order: 1.5; /* Between image and login sections */
+        order: 1.5; /* Between image and registration sections */
     }
 }
