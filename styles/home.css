@@ -1309,6 +1309,7 @@ body {
   justify-content: center;
   margin-right: 12px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .social-icon:hover {
