@@ -123,3 +123,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// grid layout our collections

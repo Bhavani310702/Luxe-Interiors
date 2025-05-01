@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe-Interiors | Premium Furniture Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="./styles/show.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <!-- Modern Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <div class="navbar-items-container">
+                <!-- Logo on left -->
+                <div class="logo-container">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assests/images/logo.png" alt="Luxe-Interiors" class="logo-img">
+                    </a>
+                </div>
+                
+                <!-- Search Form in middle with minimal width -->
+                <div class="search-container">
+                    <form class="search-form d-flex">
+                        <input class="form-control search-input" type="search" placeholder="Search for products..." aria-label="Search">
+                        <button class="btn search-button" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Navigation Items on right -->
+                <div class="nav-items-container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!-- Menu overlay for mobile -->
+                    <div class="menu-overlay" id="menuOverlay"></div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <button class="menu-close d-lg-none" id="menuClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex flex-column align-items-center" href="#">
+                                    <i class="fas fa-home nav-icon"></i>
+                                    <span class="nav-text">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex flex-column align-items-center" href="#">
+                                    <i class="fas fa-bookmark nav-icon"></i>
+                                    <span class="nav-text">Saved</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex flex-column align-items-center" href="#" style="position: relative;">
+                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                    <span class="badge-notify">2</span>
+                                    <span class="nav-text">Cart</span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex flex-column align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                    <i class="fas fa-user-circle nav-icon"></i>
+                                    <span class="nav-text">Account</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Wishlist</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#" id="logout-btn"><i class="fas fa-sign-out-alt me-2"></i>Sign out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h1 class="section-title">Our Premium Collections</h1>
+        
+        <!-- Product Grid -->
+        <div class="output" id="output">
+            <!-- Products will be loaded here -->
+            <div class="loading-indicator">
+                <div class="spinner-border" role="status" style="color: #b78f54;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading products...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-5 py-4 border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3" style="color: #b78f54;">About Luxe-Interiors</h5>
+                    <p class="text-muted">We bring elegant, luxurious furniture designs to transform your living spaces into expressions of style and comfort.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f" style="color: #b78f54;"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram" style="color: #b78f54;"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-pinterest" style="color: #b78f54;"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3" style="color: #b78f54;">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Shop</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Collections</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3" style="color: #b78f54;">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Shipping</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3" style="color: #b78f54;">Newsletter</h5>
+                    <p class="text-muted">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="d-flex mt-3">
+                        <input class="form-control me-2" type="email" placeholder="Your email" aria-label="Subscribe">
+                        <button class="btn btn-outline-secondary" type="submit" style="color: #b78f54; border-color: #b78f54;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">© 2025 Luxe-Interiors. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle functionality 
+        const apiUrls = {
+          1: 'https://68133919129f6313e2109bb9.mockapi.io/beds', // API 1
+          2: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/Sofa', // API 2
+          3: 'https://6813418e129f6313e210b68c.mockapi.io/lights', // API 3
+          4: 'https://68134e95129f6313e210e06e.mockapi.io/dinning-table', // API 4
+          5: 'https://68133919129f6313e2109bb9.mockapi.io/storage', // API 5
+          6: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/decors', // API 6
+          7: 'https://6813418e129f6313e210b68c.mockapi.io/outdoor' // API 7
+        };
+    
+        // Get API number from URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const apiNumber = urlParams.get('api');
+    
+        // Fetch data based on clicked image (api number)
+        async function fetchData() {
+          const url = apiUrls[apiNumber];
+          if (!url) {
+            alert('Invalid API number!');
+            return;
+          }
+    
+          try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Network error');
+    
+            const data = await response.json();
+    
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+    
+            data.forEach(item => {
+              outputDiv.innerHTML += `
+                <div class="card">
+                  <img src="${item.image}" alt="${item.name}">
+                  <h3>${item.name}</h3>
+                  <p>Cost: $${item.cost}</p>
+                  <p>Rating: ${item.rating}</p>
+                  <button class="btn wishlist" onclick="alert('${item.name} added to wishlist!')">❤</button>
+                  <button class="btn cart" onclick="alert('${item.name} added to cart!')">🛒</button>
+                </div>
+              `;
+            });
+    
+          } catch (error) {
+            console.error('Fetch error:', error);
+          }
+        }
+    
+        fetchData();
+    </script>
+</body>
+</html>
