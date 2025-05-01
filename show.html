@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="./styles/show.css">
+    <link rel="stylesheet" href="./styles/home.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -63,7 +64,7 @@
                             <li class="nav-item">
                                 <a class="nav-link d-flex flex-column align-items-center" href="#" style="position: relative;">
                                     <i class="fas fa-shopping-cart nav-icon"></i>
-                                    <span class="badge-notify">2</span>
+                                    <!-- <span class="badge-notify">2</span> -->
                                     <span class="nav-text">Cart</span>
                                 </a>
                             </li>
@@ -153,56 +154,89 @@
 
     <script>
         // Menu toggle functionality 
-        const apiUrls = {
-          1: 'https://68133919129f6313e2109bb9.mockapi.io/beds', // API 1
-          2: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/Sofa', // API 2
-          3: 'https://6813418e129f6313e210b68c.mockapi.io/lights', // API 3
-          4: 'https://68134e95129f6313e210e06e.mockapi.io/dinning-table', // API 4
-          5: 'https://68133919129f6313e2109bb9.mockapi.io/storage', // API 5
-          6: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/decors', // API 6
-          7: 'https://6813418e129f6313e210b68c.mockapi.io/outdoor' // API 7
-        };
+const apiUrls = {
+    1: 'https://68133919129f6313e2109bb9.mockapi.io/beds', // API 1
+    2: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/Sofa', // API 2
+    3: 'https://6813418e129f6313e210b68c.mockapi.io/lights', // API 3
+    4: 'https://68134e95129f6313e210e06e.mockapi.io/dinning-table', // API 4
+    5: 'https://68133919129f6313e2109bb9.mockapi.io/storage', // API 5
+    6: 'https://67f8eba4094de2fe6e9fc2eb.mockapi.io/decors', // API 6
+    7: 'https://6813418e129f6313e210b68c.mockapi.io/outdoor' // API 7
+  };
+  
+  // Get API number from URL query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const apiNumber = urlParams.get('api');
+  
+  // Function to generate star rating HTML
+  function generateStarRating(rating) {
+    // Convert rating to a number and ensure it's between 0 and 5
+    const numRating = parseFloat(rating);
+    const fullRating = Math.min(5, Math.max(0, numRating));
     
-        // Get API number from URL query string
-        const urlParams = new URLSearchParams(window.location.search);
-        const apiNumber = urlParams.get('api');
+    // Calculate full and half stars
+    const fullStars = Math.floor(fullRating);
+    const hasHalfStar = fullRating % 1 >= 0.5;
     
-        // Fetch data based on clicked image (api number)
-        async function fetchData() {
-          const url = apiUrls[apiNumber];
-          if (!url) {
-            alert('Invalid API number!');
-            return;
-          }
+    let starsHTML = '<div class="star-rating">';
     
-          try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Network error');
+    // Add full stars
+    for (let i = 0; i < fullStars; i++) {
+      starsHTML += '<i class="fas fa-star"></i>';
+    }
     
-            const data = await response.json();
+    // Add half star if needed
+    if (hasHalfStar) {
+      starsHTML += '<i class="fas fa-star-half-alt"></i>';
+    }
     
-            const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = '';
+    // Add empty stars to complete 5 stars total
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      starsHTML += '<i class="far fa-star"></i>';
+    }
     
-            data.forEach(item => {
-              outputDiv.innerHTML += `
-                <div class="card">
-                  <img src="${item.image}" alt="${item.name}">
-                  <h3>${item.name}</h3>
-                  <p>Cost: $${item.cost}</p>
-                  <p>Rating: ${item.rating}</p>
-                  <button class="btn wishlist" onclick="alert('${item.name} added to wishlist!')">❤</button>
-                  <button class="btn cart" onclick="alert('${item.name} added to cart!')">🛒</button>
-                </div>
-              `;
-            });
+    starsHTML += `<span class="rating-text">(${rating})</span></div>`;
     
-          } catch (error) {
-            console.error('Fetch error:', error);
-          }
-        }
-    
-        fetchData();
+    return starsHTML;
+  }
+  
+  // Fetch data based on clicked image (api number)
+  async function fetchData() {
+    const url = apiUrls[apiNumber];
+    if (!url) {
+      alert('Invalid API number!');
+      return;
+    }
+  
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Network error');
+  
+      const data = await response.json();
+  
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+  
+      data.forEach(item => {
+        outputDiv.innerHTML += `
+          <div class="card">
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>Cost: ₹${item.cost}</p>
+            <p>${generateStarRating(item.rating)}</p>
+            <button class="btn wishlist" onclick="alert('${item.name} added to wishlist!')">❤</button>
+            <button class="btn cart" onclick="alert('${item.name} added to cart!')">🛒</button>
+          </div>
+        `;
+      });
+  
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  }
+  
+  fetchData();
     </script>
 </body>
 </html>
