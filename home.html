@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/products-grid.css">
     <script src="./index.js" defer type="module"></script>
+    <script src="./abc.js" defer type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
 </head>
 <body>
     <!-- Modern Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav id="pos" class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <div class="navbar-items-container">
                 <!-- Logo on left -->
@@ -26,10 +28,10 @@
                 
                 <!-- Search Form in middle with minimal width -->
                 <div class="search-container">
-                    <form class="search-form d-flex">
+                    <form class="search-form d-flex" onsubmit="searchApi(event)">
                         <input id="searchInput" class="form-control search-input" type="search" placeholder="Search for products..." aria-label="Search">
                         <button class="btn search-button" type="submit">
-                            <i onclick="searchApi()" class="fas fa-search"></i>
+                            <i class="fas fa-search"></i>
                         </button>
                     </form>
                 </div>
@@ -49,19 +51,32 @@
                         </button>
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link d-flex flex-column align-items-center" href="#">
-                                    <i class="fas fa-home nav-icon"></i>
+                                <a  class="nav-link d-flex flex-column align-items-center" href="#home">
+                                    <i  class="fas fa-home nav-icon"></i>
                                     <span class="nav-text">Home</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex flex-column align-items-center" href="#">
+                                <a class="nav-link d-flex flex-column align-items-center" href="#about">
+                                    <i class="fas fa-info-circle nav-icon"></i>
+                                    <span class="nav-text">About</span>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link d-flex flex-column align-items-center" href="#services">
+                                    <i class="fas fa-cogs nav-icon"></i>
+                                    <span class="nav-text">Services</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex flex-column align-items-center" href="./saved.html">
                                     <i class="fas fa-bookmark nav-icon"></i>
                                     <span class="nav-text">Saved</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex flex-column align-items-center" href="#" style="position: relative;">
+                                <a class="nav-link d-flex flex-column align-items-center" href="./cart.html" style="position: relative;">
                                     <i class="fas fa-shopping-cart nav-icon"></i>
                                     <!-- <span class="badge-notify">2</span> -->
                                     <span class="nav-text">Cart</span>
@@ -88,7 +103,7 @@
     </nav>
 
     <!-- Hero Section with 60:40 Split -->
-    <section class="hero-section">
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row">
                 <!-- Left side image (60%) -->
@@ -193,7 +208,7 @@
 
 
 <!-- About Section -->
-<section class="about-section">
+<section id="about" class="about-section">
     <section class="page-heading">
         <div class="container">
             <div class="row">
@@ -237,7 +252,7 @@
 <!-- services -->
 
 <!-- Updated Home Solutions Section -->
-<section class="home-solutions">
+<section id="services" class="home-solutions">
     <div class="section-heading">
       <h2>Explore Our Services</h2>
       <div class="heading-underline"></div>
@@ -284,8 +299,8 @@
       <div class="footer-section help-info">
         <h3>Help & Information</h3>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
           <li><a href="#">FAQs</a></li>
           <li><a href="#">Shipping & Returns</a></li>
           <li><a href="#">Privacy Policy</a></li>
@@ -346,6 +361,25 @@
         window.location.href = "products.html";
       }
   
+   </script>
+   <script>
+    function searchApi(event) {
+        event.preventDefault(); // Prevent form from submitting
+    
+        const inputElement = document.getElementById("searchInput");
+        if (!inputElement) {
+          alert("Search input field not found.");
+          return;
+        }
+    
+        const query = inputElement.value.trim().toLowerCase();
+        if (query) {
+          // Redirect to results page with category as query param
+          window.location.href = `search.html?category=${encodeURIComponent(query)}`;
+        } else {
+          alert("Please enter a search term.");
+        }
+      }
    </script>
    
   
