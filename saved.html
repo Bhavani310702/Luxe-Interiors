@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wishlist - Luxe-Interiors</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    .card {
+      width: 18rem;
+      margin: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Your Wishlist</h2>
+    <div id="wishlist-output" class="card-container"></div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const output = document.getElementById('wishlist-output');
+
+      if (wishlist.length === 0) {
+        output.innerHTML = "<p class='text-center'>Your wishlist is empty.</p>";
+        return;
+      }
+
+      wishlist.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <img src="${item.image}" class="card-img-top" alt="${item.name}">
+          <div class="card-body">
+            <h5 class="card-title">${item.name}</h5>
+            <p class="card-text">₹${Number(item.cost).toLocaleString('en-IN')}</p>
+            <p class="card-text">⭐ ${item.rating}</p>
+          </div>
+        `;
+
+        output.appendChild(card);
+      });
+    };
+  </script>
+</body>
+</html>

@@ -59,3 +59,23 @@ const apiUrls = {
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${item.name} added to Cart!`);
       }
+
+
+      function addToWishlist(item) {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        wishlist.push(item);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        alert(`${item.name} added to Wishlist!`);
+      }
+      function addToWishlist(item) {
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  // Check for duplicates
+  if (!wishlist.find(w => w.id === item.id)) {
+    wishlist.push(item);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    alert(`${item.name} added to Wishlist!`);
+  } else {
+    alert(`${item.name} is already in your Wishlist.`);
+  }
+}
