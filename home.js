@@ -124,4 +124,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function searchApi() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    if (query)
+   {
+      window.location.href =`search.html?category=${query}`;
+    } else {
+      alert("Please type something!");
+    }
+  }
+
 // grid layout our collections

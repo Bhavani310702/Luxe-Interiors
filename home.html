@@ -27,9 +27,9 @@
                 <!-- Search Form in middle with minimal width -->
                 <div class="search-container">
                     <form class="search-form d-flex">
-                        <input class="form-control search-input" type="search" placeholder="Search for products..." aria-label="Search">
+                        <input id="searchInput" class="form-control search-input" type="search" placeholder="Search for products..." aria-label="Search">
                         <button class="btn search-button" type="submit">
-                            <i class="fas fa-search"></i>
+                            <i onclick="searchApi()" class="fas fa-search"></i>
                         </button>
                     </form>
                 </div>
@@ -102,7 +102,7 @@
                         <h1>Welcome to Luxe-Interiors</h1>
                         <p class="hero-text">Transform your living space with our curated collection of premium furniture and decor. Discover unique pieces that blend elegance and comfort for the perfect interior.</p>
                         <p class="hero-subtext">From contemporary designs to timeless classics, our collection caters to diverse aesthetics.</p>
-                        <button class="btn explore-btn">Explore Collection</button>
+                        <a href="#explore"><button class="btn explore-btn">Explore Collection</button></a>
                     </div>
                 </div>
             </div>
@@ -112,12 +112,12 @@
     <!-- Products Grid Section -->
     <section class="luxe-products-section">
         <div class="container">
-            <h2 class="section-title">Our Collections</h2>
+            <h2 id="explore" class="section-title">Our Collections</h2>
             <div class="luxe-products-grid">
                 <div class="luxe-box luxe-promo" data-aos="zoom-in-up" data-aos-delay="100">
                     <div class="luxe-promo-content">
                         <h2>Elevate Your Space</h2>
-                        <a href="#" class="luxe-btn promo-btn">Discover More</a>
+                        <a onclick="allProducts()" href="#" class="luxe-btn promo-btn">Discover More</a>
                     </div>
                 </div>
                 
@@ -341,5 +341,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./scripts/home.js"></script>
     <script src="./scripts/products-grid.js"></script>
+   <script>
+    function allProducts() {
+        window.location.href = "products.html";
+      }
+  
+   </script>
+   
+  
 </body>
 </html>
