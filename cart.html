@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe-Interiors</title>
+  <meta charset="UTF-8" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
 </head>
 <body>
-    
-</body>
-</html>
+  <div class="container my-5">
+    <h1 class="mb-4">My Cart</h1>
+    <button class="btn btn-warning mb-4" onclick="clearCart()">Clear All</button>
+    <div id="cart-output"></div> 
+    <h3 class="mt-4">Total Amount: ₹<span id="total-amount">0</span></h3>
+  </div>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const outputDiv = document.getElementById('cart-output');
+      outputDiv.innerHTML = '';
+
+      let totalAmount = 0;
+
+      if (cart.length === 0) {
+        outputDiv.innerHTML = '<p>Your cart is empty.</p>';
+        document.getElementById('total-amount').innerText = '0';
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        item.quantity = item.quantity || 1;
+
+        let itemTotal = item.cost * item.quantity;
+        totalAmount += itemTotal;
+
+        const row = document.createElement('div');
+        row.className = 'row align-items-center border p-3 mb-3';
+
+        row.innerHTML = `
+          <div class="col-md-2">
+            <img src="${item.image}" class="img-fluid" alt="${item.name}">
+          </div>
+          <div class="col-md-4">
+            <h5>${item.name}</h5>
+            <p>Price: ₹${item.cost}</p>
+            <p>Total: ₹<span class="item-total">${itemTotal}</span></p>
+            <button class="btn btn-danger remove-btn">Remove</button>
+          </div>
+          <div class="col-md-3 d-flex align-items-center">
+            <button class="btn btn-sm btn-secondary me-2 decrease-btn">-</button>
+            <span class="quantity fw-bold">${item.quantity}</span>
+            <button class="btn btn-sm btn-secondary ms-2 increase-btn">+</button>
+          </div>
+        `;
+
+        // Event handlers
+        row.querySelector('.increase-btn').addEventListener('click', () => {
+          cart[index].quantity++;
+          saveCart(cart);
+          loadCart();
+        });
+
+        row.querySelector('.decrease-btn').addEventListener('click', () => {
+          if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+            saveCart(cart);
+            loadCart();
+          }
+        });
+
+        row.querySelector('.remove-btn').addEventListener('click', () => {
+          cart.splice(index, 1);
+          saveCart(cart);
+          loadCart();
+        });
+
+        outputDiv.appendChild(row);
+      });
+
+      document.getElementById('total-amount').innerText = totalAmount;
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function clearCart() {
+        if (confirm('Are you sure you want to clear your entire cart?')) {
+          localStorage.removeItem('cart');
+          loadCart();
+        }
+      }
+  
+      loadCart();
+    </script>
+  </body>
+  </html>

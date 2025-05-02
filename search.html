@@ -178,9 +178,9 @@
                     <h4>${item.name}</h4>
                     <p>₹${Number(item.cost).toLocaleString('en-IN')}</p>
                     <p>⭐ ${item.rating}</p>
-                    <button class="btn wishlist" onclick="alert('${item.name} added to wishlist!')">❤</button>
-                    <button class="btn cart" onclick="alert('${item.name} added to cart!')">🛒</button>
-         
+                    <button class="btn wishlist" onclick='addToWishlist(${JSON.stringify(item)})'><i class="fas fa-bookmark nav-icon"></i></button>
+                     <button class="btn cart" onclick='addToCart(${JSON.stringify(item)})'><i class="fas fa-shopping-cart nav-icon"></i></button>
+
                   </div>
                 `;
               });
@@ -194,5 +194,38 @@
         
         
     </script>
+    <script>
+        function addToCart(item) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let existing = cart.find(cartItem => cartItem.id === item.id);
+      
+          if (existing) {
+            existing.quantity = (existing.quantity || 1) + 1;
+          } else {
+            item.quantity = 1;
+            cart.push(item);
+          }
+      
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${item.name} added to cart!`);
+        }
+
+
+        function addToWishlist(item) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            let exists = wishlist.find(wishItem => wishItem.id === item.id);
+            
+            if (!exists) {
+              wishlist.push(item);
+              localStorage.setItem('wishlist', JSON.stringify(wishlist));
+              alert(`${item.name} added to wishlist!`);
+            } else {
+              alert(`${item.name} is already in wishlist.`);
+            }
+          }
+          
+      </script>
+      
+      
     </body>
     </html>

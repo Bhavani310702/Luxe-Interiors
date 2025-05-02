@@ -1,62 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wishlist - Luxe-Interiors</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <style>
-    .card {
-      width: 18rem;
-      margin: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .card img {
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe-Interiors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/show.css">
+    <script src="./home.js" defer type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+  <nav id="pos" class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <div class="navbar-items-container">
+            <!-- Logo on left -->
+            <div class="logo-container">
+                <a class="navbar-brand" href="#">
+                    <img src="./assests/images/logo.png" alt="Luxe-Interiors" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- Search Form in middle with minimal width -->
+            <!-- <div class="search-container">
+                <form class="search-form d-flex">
+                    <input class="form-control search-input" type="search" placeholder="Search for products..." aria-label="Search">
+                    <button class="btn search-button" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div> -->
+            
+            <!-- Navigation Items on right -->
+            <div class="nav-items-container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Menu overlay for mobile -->
+                <div class="menu-overlay" id="menuOverlay"></div>
+                
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <button class="menu-close d-lg-none" id="menuClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex flex-column align-items-center" href="./home.html">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex flex-column align-items-center" href="./saved.html">
+                                <i class="fas fa-bookmark nav-icon"></i>
+                                <span class="nav-text">Saved</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex flex-column align-items-center" href="./cart.html" style="position: relative;">
+                                <i class="fas fa-shopping-cart nav-icon"></i>
+                                <!-- <span class="badge-notify">2</span> -->
+                                <span class="nav-text">Cart</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex flex-column align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user-circle nav-icon"></i>
+                                <span class="nav-text">Account</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Wishlist</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" id="logout-btn"><i class="fas fa-sign-out-alt me-2"></i>Sign out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
   <div class="container my-5">
-    <h2 class="text-center mb-4">Your Wishlist</h2>
-    <div id="wishlist-output" class="card-container"></div>
+    <h1 class="mb-4">My Wishlist</h1>
+    <button class="btn btn-warning mb-4" onclick="clearWishlist()">Clear All</button>
+    <div id="wishlist-output" class="row"></div>
+    <!-- <div class="output" id="output"><div id="wishlist-output" class="row"></div></div> -->
   </div>
 
-  <script>
-    window.onload = () => {
-      const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-      const output = document.getElementById('wishlist-output');
+  <footer class="bg-white mt-5 py-4 border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="mb-3" style="color: #b78f54;">About Luxe-Interiors</h5>
+                <p class="text-muted">We bring elegant, luxurious furniture designs to transform your living spaces into expressions of style and comfort.</p>
+                <div class="social-icons mt-3">
+                    <a href="#" class="me-2"><i class="fab fa-facebook-f" style="color: #b78f54;"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-instagram" style="color: #b78f54;"></i></a>
+                    <a href="#" class="me-2"><i class="fab fa-pinterest" style="color: #b78f54;"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4 mb-md-0">
+                <h5 class="mb-3" style="color: #b78f54;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Shop</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Collections</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 mb-4 mb-md-0">
+                <h5 class="mb-3" style="color: #b78f54;">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">FAQ</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Shipping</a></li>
+                    <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Returns</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="mb-3" style="color: #b78f54;">Newsletter</h5>
+                <p class="text-muted">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <form class="d-flex mt-3">
+                    <input class="form-control me-2" type="email" placeholder="Your email" aria-label="Subscribe">
+                    <button class="btn btn-outline-secondary" type="submit" style="color: #b78f54; border-color: #b78f54;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="text-muted mb-0">© 2025 Luxe-Interiors. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
+  <script>
+    function loadWishlist() {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      const outputDiv = document.getElementById('wishlist-output');
+      outputDiv.innerHTML = '';
+  
       if (wishlist.length === 0) {
-        output.innerHTML = "<p class='text-center'>Your wishlist is empty.</p>";
+        outputDiv.innerHTML = '<p>No items in wishlist.</p>';
         return;
       }
-
+  
       wishlist.forEach(item => {
+        let images = Array.isArray(item.image) ? item.image : [item.image];
+        let imagesHTML = images.map(img => `<img src="${img}" class="img-fluid rounded mb-2" alt="${item.name}">`).join('');
+  
         const card = document.createElement('div');
-        card.className = 'card';
-
+        card.className = 'card col-md-3 p-2 m-2';
+  
         card.innerHTML = `
-          <img src="${item.image}" class="card-img-top" alt="${item.name}">
+          ${imagesHTML}
           <div class="card-body">
             <h5 class="card-title">${item.name}</h5>
-            <p class="card-text">₹${Number(item.cost).toLocaleString('en-IN')}</p>
-            <p class="card-text">⭐ ${item.rating}</p>
+            <p class="card-text">Cost: ₹${item.cost}</p>
+            <button class="btn btn-danger remove-btn"><i class="fas fa-trash nav-icon"></i></button>
           </div>
         `;
-
-        output.appendChild(card);
+  
+        const removeBtn = card.querySelector('.remove-btn');
+        removeBtn.addEventListener('click', () => removeFromWishlist(item.id));
+  
+        outputDiv.appendChild(card);
       });
-    };
+    }
+  
+    function removeFromWishlist(id) {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      wishlist = wishlist.filter(item => item.id != id); // Loose comparison is fine
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      loadWishlist();
+    }
+  
+    function clearWishlist() {
+      if (confirm('Are you sure you want to clear your entire wishlist?')) {
+        localStorage.removeItem('wishlist');
+        loadWishlist();
+      }
+    }
+  
+    loadWishlist();
   </script>
+  
 </body>
 </html>
