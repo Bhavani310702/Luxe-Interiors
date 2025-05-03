@@ -6,12 +6,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
 </head>
 <body>
-  <div class="container my-5">
+  <!-- <div class="container my-5">
     <h1 class="mb-4">My Cart</h1>
     <button class="btn btn-warning mb-4" onclick="clearCart()">Clear All</button>
     <div id="cart-output"></div> 
     <h3 class="mt-4">Total Amount: ₹<span id="total-amount">0</span></h3>
+  </div> -->
+  <div class="container my-5">
+    <h1 class="mb-4">My Cart</h1>
+    <button class="btn btn-warning mb-3" onclick="clearCart()">Clear All</button>
+    <button class="btn btn-primary mb-4 ms-2" onclick="buyAll()">Buy All Products</button>
+
+    <div id="cart-output"></div> 
+    <h3 class="mt-4">Total Amount: ₹<span id="total-amount">0</span></h3>
   </div>
+
 
   <script>
     function loadCart() {
@@ -35,63 +44,86 @@
 
         const row = document.createElement('div');
         row.className = 'row align-items-center border p-3 mb-3';
-
         row.innerHTML = `
-          <div class="col-md-2">
-            <img src="${item.image}" class="img-fluid" alt="${item.name}">
-          </div>
-          <div class="col-md-4">
-            <h5>${item.name}</h5>
-            <p>Price: ₹${item.cost}</p>
-            <p>Total: ₹<span class="item-total">${itemTotal}</span></p>
-            <button class="btn btn-danger remove-btn">Remove</button>
-          </div>
-          <div class="col-md-3 d-flex align-items-center">
-            <button class="btn btn-sm btn-secondary me-2 decrease-btn">-</button>
-            <span class="quantity fw-bold">${item.quantity}</span>
-            <button class="btn btn-sm btn-secondary ms-2 increase-btn">+</button>
-          </div>
-        `;
+        <div class="col-md-2">
+          <img src="${item.image}" class="img-fluid" alt="${item.name}">
+        </div>
+        <div class="col-md-4">
+          <h5>${item.name}</h5>
+          <p>Price: ₹${item.cost}</p>
+          <p>Total: ₹<span class="item-total">${itemTotal}</span></p>
+          <button class="btn btn-danger remove-btn">Remove</button>
+          <button class="btn btn-success ms-2 buy-now-btn">Buy Now</button>
+        </div>
+        <div class="col-md-3 d-flex align-items-center">
+          <button class="btn btn-sm btn-secondary me-2 decrease-btn">-</button>
+          <span class="quantity fw-bold">${item.quantity}</span>
+          <button class="btn btn-sm btn-secondary ms-2 increase-btn">+</button>
+        </div>
+      `;
 
-        // Event handlers
-        row.querySelector('.increase-btn').addEventListener('click', () => {
-          cart[index].quantity++;
-          saveCart(cart);
-          loadCart();
-        });
-
-        row.querySelector('.decrease-btn').addEventListener('click', () => {
-          if (cart[index].quantity > 1) {
-            cart[index].quantity--;
-            saveCart(cart);
-            loadCart();
-          }
-        });
-
-        row.querySelector('.remove-btn').addEventListener('click', () => {
-          cart.splice(index, 1);
-          saveCart(cart);
-          loadCart();
-        });
-
-        outputDiv.appendChild(row);
+      // Increase quantity
+      row.querySelector('.increase-btn').addEventListener('click', () => {
+        cart[index].quantity++;
+        saveCart(cart);
+        loadCart();
       });
 
-      document.getElementById('total-amount').innerText = totalAmount;
-    }
-
-    function saveCart(cart) {
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-
-    function clearCart() {
-        if (confirm('Are you sure you want to clear your entire cart?')) {
-          localStorage.removeItem('cart');
+      // Decrease quantity
+      row.querySelector('.decrease-btn').addEventListener('click', () => {
+        if (cart[index].quantity > 1) {
+          cart[index].quantity--;
+          saveCart(cart);
           loadCart();
         }
+      });
+
+// Remove item
+row.querySelector('.remove-btn').addEventListener('click', () => {
+  cart.splice(index, 1);
+  saveCart(cart);
+  loadCart();
+});
+
+// Buy Now button (single item)
+row.querySelector('.buy-now-btn').addEventListener('click', () => {
+  localStorage.setItem('paymentMode', 'single');
+  localStorage.setItem('selectedItem', JSON.stringify(item));
+  window.location.href = 'payment.html'; // Go to same payment page
+});
+
+outputDiv.appendChild(row);
+});
+
+document.getElementById('total-amount').innerText = totalAmount;
+}
+
+function saveCart(cart) {
+localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function clearCart() {
+if (confirm('Are you sure you want to clear your entire cart?')) {
+localStorage.removeItem('cart');
+loadCart();
+}
+}
+    // Buy All Products button
+    function buyAll() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
       }
-  
-      loadCart();
+      localStorage.setItem('paymentMode', 'all');
+      window.location.href = 'payment.html';  // Same page
+    }
+
+    loadCart();
+
+
+
+
     </script>
   </body>
   </html>

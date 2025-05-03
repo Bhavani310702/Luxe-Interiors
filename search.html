@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe-Interiors</title>
+    <title>Luxe-Interiors | Premium Furniture Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/show.css">
+    <link rel="stylesheet" href="./styles/home.css">
     <script src="./home.js" defer type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- <script src="./show.js" defer> </script> -->
 </head>
 <body>
     <nav id="pos" class="navbar navbar-expand-lg navbar-light">
@@ -161,6 +164,39 @@
         
             const params = new URLSearchParams(window.location.search);
             const category = params.get('category');
+
+            function generateStarRating(rating) {
+                // Convert rating to a number and ensure it's between 0 and 5
+                const numRating = parseFloat(rating);
+                const fullRating = Math.min(5, Math.max(0, numRating));
+                
+                // Calculate full and half stars
+                const fullStars = Math.floor(fullRating);
+                const hasHalfStar = fullRating % 1 >= 0.5;
+                
+                let starsHTML = '<div class="star-rating">';
+                
+                // Add full stars
+                for (let i = 0; i < fullStars; i++) {
+                  starsHTML += '<i class="fas fa-star"></i>';
+                }
+                
+                // Add half star if needed
+                if (hasHalfStar) {
+                  starsHTML += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                // Add empty stars to complete 5 stars total
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                  starsHTML += '<i class="far fa-star"></i>';
+                }
+                
+                starsHTML += `<span class="rating-text">(${rating})</span></div>`;
+                
+                return starsHTML;
+              }
+              
         
             async function fetchApi() {
               const url = apiUrls[category];
@@ -175,9 +211,9 @@
                 outputHtml += `
                   <div class="card">
                     <img src="${item.image}" alt="${item.name}">
-                    <h4>${item.name}</h4>
+                    <h5>${item.name}</h5>
                     <p>₹${Number(item.cost).toLocaleString('en-IN')}</p>
-                    <p>⭐ ${item.rating}</p>
+                     <p>${generateStarRating(item.rating)}</p>
                     <button class="btn wishlist" onclick='addToWishlist(${JSON.stringify(item)})'><i class="fas fa-bookmark nav-icon"></i></button>
                      <button class="btn cart" onclick='addToCart(${JSON.stringify(item)})'><i class="fas fa-shopping-cart nav-icon"></i></button>
 
